@@ -1,0 +1,132 @@
+/* ==========================================================
+   PIXEL CLUB · estilos del menú principal
+   (selección de personajes con escenarios, intro, Isamar, Sharol)
+   ========================================================== */
+
+/* ---------- barras superiores: espacio para la barra común ---------- */
+.pcbh{display:inline-flex;flex:none}
+.tbar{gap:10px;padding:5px 8px}
+.tbar b{overflow:hidden;text-overflow:ellipsis}
+
+/* ---------- selección de personajes ---------- */
+#v-home .hhead{padding:clamp(6px,1.2vh,12px) 12px;gap:clamp(10px,2vw,24px)}
+#v-home h1.ttl{font-size:clamp(.95rem,2.5vw,1.85rem)}
+#v-home .eyebrow{font-size:clamp(.46rem,.85vw,.66rem);padding:7px 10px;box-shadow:3px 3px 0 var(--ink)}
+#v-home .stage{background:#1a1030;margin:8px 8px 0}
+#v-home .stage::before,#v-home .stage::after{display:none}
+#scene,#sceneTr{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated;image-rendering:crisp-edges;image-rendering:pixelated}
+#scene{z-index:0}
+#sceneTr{z-index:3;pointer-events:none}
+#v-home .stage-in{inset:0 0 56px 0;z-index:2;grid-template-columns:auto minmax(0,1fr) auto minmax(0,.95fr);gap:6px;padding:0 14px 0 6px;align-items:end}
+#v-home .sprw{align-self:end;position:relative}
+#v-home #spr,#v-home #spr2{filter:drop-shadow(0 0 0 transparent) drop-shadow(4px 4px 0 rgba(10,6,24,.45))}
+#v-home .arrow{z-index:4}
+
+#v-home .dlg{align-self:stretch;display:flex;flex-direction:column;gap:clamp(6px,1.3vh,12px);margin:clamp(8px,1.6vh,14px) 0 clamp(10px,2vh,16px);
+  padding:clamp(12px,2.2vh,20px) clamp(14px,1.9vw,24px);overflow:auto;max-height:none;scrollbar-width:thin;
+  background:linear-gradient(180deg,#fffef8f6,#fff8fcf4);border:4px solid #292449;border-radius:3px;
+  box-shadow:inset 0 0 0 3px var(--c3),6px 6px 0 #292449;backdrop-filter:blur(3px)}
+.dl-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex:none}
+.dl-top .tag{font-size:clamp(.42rem,.9vw,.54rem)}
+.dl-n{font:clamp(.42rem,.9vw,.54rem) 'Press Start 2P',ui-monospace,monospace;color:#6a6788;white-space:nowrap}
+.dl-name{font:clamp(1.05rem,3.3vh,1.75rem)/1.2 'Press Start 2P',ui-monospace,monospace;color:var(--c1);text-shadow:3px 3px 0 #292449;-webkit-text-stroke:0;letter-spacing:.02em;flex:none}
+#v-home .dlg h2{margin:0;font-size:clamp(1rem,2.9vh,1.42rem);line-height:1.25;flex:none}
+.dl-quote{margin:0;flex:none;position:relative;padding:clamp(8px,1.6vh,12px) 12px clamp(8px,1.6vh,12px) 16px;border:3px solid #292449;border-left:8px solid var(--c1);background:var(--c3);box-shadow:3px 3px 0 #292449}
+.dl-quote p{margin:0;font:800 italic clamp(.86rem,2.3vh,1.08rem)/1.45 Nunito,system-ui,sans-serif;color:var(--ink);min-height:2.9em}
+.dl-quote cite{display:block;margin-top:4px;font:normal .46rem 'Press Start 2P',ui-monospace,monospace;color:#6a6788;letter-spacing:.04em}
+.dl-quote p::after{content:'▌';margin-left:2px;color:var(--c1);animation:blink .7s steps(2,end) infinite}
+.dl-quote.done p::after{display:none}
+@keyframes blink{50%{opacity:0}}
+#v-home .dlg .dl-desc{margin:0;flex:none;font-weight:700;font-size:clamp(.82rem,2.1vh,1.02rem);line-height:1.5}
+.dl-goals{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:0;margin:0;flex:none}
+.dl-goals li{display:flex;gap:8px;align-items:center;font:800 clamp(.7rem,1.85vh,.86rem)/1.25 Nunito,system-ui,sans-serif;border:3px solid #292449;padding:5px 8px;background:#fff;min-width:0}
+.dl-goals li::before{content:'';flex:none;width:10px;height:10px;background:var(--c1);border:2px solid #292449}
+#v-home .go{margin-top:auto;flex:none;position:relative;overflow:hidden;min-height:clamp(46px,9vh,64px);padding:10px 16px;display:flex;align-items:center;justify-content:center;gap:12px;
+  font:clamp(.6rem,1.75vh,.8rem)/1.4 'Press Start 2P',ui-monospace,monospace;letter-spacing:.03em;border-width:4px;box-shadow:5px 5px 0 #292449;animation:goPulse 1.8s steps(2,end) infinite}
+#v-home .go::after{content:'';position:absolute;top:0;bottom:0;left:-40%;width:22%;background:linear-gradient(100deg,transparent,#ffffff70,transparent);transform:skewX(-18deg);animation:goShine 2.8s steps(14,end) infinite}
+#v-home .go .gi{flex:none;display:inline-flex}
+#v-home .go .gi svg{width:clamp(20px,3.2vh,28px);height:auto}
+#v-home .go:hover{filter:brightness(1.08);transform:translateY(-2px)}
+#v-home .go:active{transform:translate(3px,3px);box-shadow:2px 2px 0 #292449}
+#v-home .go:focus-visible{outline:4px solid #292449;outline-offset:3px}
+@keyframes goPulse{50%{box-shadow:5px 5px 0 #292449,0 0 0 4px var(--c3)}}
+@keyframes goShine{0%,60%{left:-40%}100%{left:130%}}
+#v-home .dots{z-index:4;height:56px}
+#v-home .dot{font-size:.8rem}
+@media(max-width:1000px){#v-home .stage-in{grid-template-columns:auto minmax(0,.8fr) auto minmax(0,1.3fr)}}
+@media(max-width:820px){
+  #v-home .stage-in{grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:minmax(0,.9fr) auto;padding:0 6px}
+  #v-home .dlg{grid-column:1/-1;grid-row:2;margin:0 0 8px;max-height:100%}
+  .dl-goals{display:none}
+  .dl-quote p{min-height:0}
+}
+@media(max-height:560px){.dl-goals{display:none}.dl-desc{font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){#v-home .go,#v-home .go::after,.dl-quote p::after{animation:none!important}}
+
+/* ---------- introducción cinematográfica ---------- */
+#pcIntro{position:fixed;inset:0;z-index:99999;background:#05040c;display:grid;place-items:center;overflow:hidden;transition:opacity .7s steps(7,end)}
+#pcIntro.out{opacity:0;pointer-events:none}
+#pcIntro canvas{width:min(100vw,177.78vh);height:min(56.25vw,100vh);image-rendering:pixelated;display:block;background:#05040c;box-shadow:0 0 0 2px #0c0a1a}
+.pci-btns{position:absolute;right:max(12px,env(safe-area-inset-right,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));display:flex;gap:8px;z-index:5}
+.pci-skip{background:#ffd35a;color:#20203b;border:3px solid #fff;padding:11px 14px;font:10px 'Press Start 2P',ui-monospace,monospace;cursor:pointer;box-shadow:4px 4px 0 #7954cc;min-height:44px}
+.pci-skip:hover{filter:brightness(1.08)}.pci-skip:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.pci-gate{position:absolute;inset:0;z-index:3;border:0;background:transparent;cursor:pointer;color:#fff}
+.pci-gate:focus-visible{outline:4px solid #ffd35a;outline-offset:-8px}
+.pci-snd{position:absolute;left:max(12px,env(safe-area-inset-left,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:5}
+
+#v-home .dlg.dsw{animation:dlgSw .35s steps(5,end)}
+@keyframes dlgSw{from{transform:translateX(30px);opacity:0}to{transform:none;opacity:1}}
+
+#v-home h1.ttl{text-shadow:2px 2px 0 #b8a6ff,4px 4px 0 #20203b}
+
+/* reparto de la intro */
+.pci-cast{position:absolute;left:0;right:0;bottom:calc(max(0px,(100vh - 56.25vw)/2) + 9%);display:flex;justify-content:center;align-items:flex-end;gap:clamp(4px,1.6vw,22px);pointer-events:none;z-index:1}
+.pci-c{height:min(21vh,12.5vw);width:auto;opacity:0;transform:translateY(24px);filter:drop-shadow(3px 3px 0 rgba(0,0,0,.5));image-rendering:pixelated}
+.pci-cast.on .pci-c{animation:pciPop .45s steps(5,end) forwards;animation-delay:calc(var(--i)*.14s)}
+@keyframes pciPop{0%{opacity:0;transform:translateY(30px) scale(.8)}70%{opacity:1;transform:translateY(-6px) scale(1.04)}100%{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.pci-cast.on .pci-c{animation:none;opacity:1;transform:none}}
+
+/* ---------- Isamar · sala de exploración ---------- */
+.isa-main .vd-count{font:.5rem 'Press Start 2P',ui-monospace,monospace;color:#ffd35a;background:#2b0c1a;border:2px solid #f0bdce;padding:6px 8px;white-space:nowrap}
+.isa-main .vd-count.all{background:#2f9e57;color:#fff;border-color:#bff0cf}
+.vd{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:10px}
+.vd-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-height:0;align-content:start}
+.vd-col{display:flex;flex-direction:column;gap:5px;min-width:0}
+.vd-col h5{margin:0 0 2px;font:.5rem/1.5 'Press Start 2P',ui-monospace,monospace;padding:6px 7px;border:3px solid #16080d;color:#fff}
+.vd-col.v h5{background:#2f9e57}.vd-col.d h5{background:#c2403f}
+.vd-card{position:relative;display:flex;align-items:center;gap:7px;text-align:left;cursor:pointer;min-height:clamp(42px,8.2vh,62px);padding:4px 24px 4px 6px;
+  background:#fff2e7;color:#381222;border:3px solid #16080d;box-shadow:3px 3px 0 #16080d;font:900 clamp(.66rem,1.6vh,.84rem)/1.15 Nunito,system-ui,sans-serif;min-width:0;transition:transform .08s steps(2)}
+.vd-card .vd-ico{width:28px;height:28px;flex:none;image-rendering:pixelated;background:#fff;border:2px solid #16080d;padding:1px}
+.vd-card.v{border-left:7px solid #2f9e57}.vd-card.d{border-left:7px solid #c2403f}
+.vd-card:hover{transform:translate(-1px,-1px);background:#fff}
+.vd-card:focus-visible{outline:3px solid #ffd35a;outline-offset:2px}
+.vd-card:not(.seen){animation:vdGlow 1.8s steps(2,end) infinite}
+.vd-card.seen{background:#e8f6ec}.vd-card.d.seen{background:#fdeaea}
+.vd-card.sel{background:#ffd35a!important;box-shadow:3px 3px 0 #16080d,0 0 0 3px #fff;transform:translate(-1px,-1px)}
+.vd-chk{display:none;position:absolute;right:5px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:#2f9e57;color:#fff;border:2px solid #16080d;font:900 .6rem/12px sans-serif;text-align:center;font-style:normal}
+.vd-card.seen .vd-chk{display:block}.vd-card.d.seen .vd-chk{background:#c2403f}
+@keyframes vdGlow{50%{box-shadow:3px 3px 0 #16080d,0 0 0 3px #ffd35a77}}
+.vd-det{min-height:0;display:flex;flex-direction:column;background:#fff2e7;border:4px solid #16080d;box-shadow:inset 0 0 0 3px #f5d7e1;color:#381222;overflow:hidden}
+.vd-det.v{border-color:#1c6b3a;box-shadow:inset 0 0 0 3px #bff0cf}.vd-det.d{border-color:#8f2b2b;box-shadow:inset 0 0 0 3px #ffc5ca}
+.vd-ill{position:relative;flex:none;border-bottom:4px solid #16080d;background:#fff;animation:vdIn .35s steps(5,end)}
+.vd-ill canvas{display:block;width:100%;height:auto;aspect-ratio:160/72;image-rendering:pixelated;max-height:34vh;object-fit:contain;margin:0 auto}
+.vd-badge{position:absolute;left:0;top:0;padding:6px 9px;font:.5rem 'Press Start 2P',ui-monospace,monospace;color:#fff;border:3px solid #16080d;border-left:0;border-top:0}
+.vd-det.v .vd-badge{background:#2f9e57}.vd-det.d .vd-badge{background:#c2403f}
+.vd-txt{padding:clamp(8px,1.6vh,14px) 14px;overflow:auto;min-height:0;animation:vdIn .35s steps(5,end) .1s both}
+.vd-txt h4{margin:0 0 6px;font-size:clamp(1.05rem,2.6vh,1.5rem);line-height:1.2;color:#7d173c}
+.vd-txt p{margin:0;font-weight:800;line-height:1.5;font-size:clamp(.92rem,2.2vh,1.2rem)}
+.vd-empty{margin:auto;text-align:center;padding:16px;display:flex;flex-direction:column;gap:8px;align-items:center;font-weight:800;font-size:clamp(.85rem,2vh,1.05rem);color:#7d173c}
+.vd-hand{font:1.6rem 'Press Start 2P',monospace;color:#c2403f;animation:vdHand .8s steps(2,end) infinite}
+@keyframes vdHand{50%{transform:translateX(-8px)}}
+@keyframes vdIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ab.rdy{animation:vdGlow 1s steps(2,end) infinite;background:#2f9e57;border-color:#bff0cf}
+@media(max-width:820px){.vd{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);overflow:auto}.vd-list{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){.vd-card:not(.seen),.vd-hand,.ab.rdy,.vd-ill,.vd-txt{animation:none!important}}
+
+@media(max-width:820px){
+  #v-home .dl-desc{display:none}
+  #v-home .dlg{max-height:62%;gap:6px;padding:10px 12px}
+  #v-home .dl-quote{padding:7px 10px 7px 12px}
+  #v-home .dl-quote cite{display:none}
+  #v-home .dl-quote p{font-size:.82rem}
+}
