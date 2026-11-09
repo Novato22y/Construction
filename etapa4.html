@@ -349,7 +349,7 @@ $('guide').onclick=function(){
 };
 $('reset').onclick=()=>{state.guided=true;$('guide').setAttribute('aria-pressed','true');$('guide').textContent='Guía: sí';start();};
 /* Navegación: las secciones destino no están definidas en este archivo; se emiten eventos para conectarlas. */
-const nav=(name,fn)=>{if(typeof window[fn]==='function')return window[fn]();if(name==='laura:continuar'){try{const x=JSON.parse(localStorage.getItem('pcLaura')||'{}');x.completed=x.completed||[];if(!x.completed.includes(4))x.completed.push(4);localStorage.setItem('pcLaura',JSON.stringify(x));}catch(e){} location.href='etapa5.html'; return;}if(name==='laura:menu'){(sessionStorage.setItem('pcArqReturn','1'),location.href='avance 2.html');return;}window.dispatchEvent(new CustomEvent(name));try{parent.postMessage({type:name},'*');}catch(e){}};
+const nav=(name,fn)=>{if(typeof window[fn]==='function')return window[fn]();if(name==='laura:continuar'){try{const x=JSON.parse(localStorage.getItem('pcLaura')||'{}');x.completed=x.completed||[];if(!x.completed.includes(4))x.completed.push(4);localStorage.setItem('pcLaura',JSON.stringify(x));}catch(e){} location.href='etapa5.html'; return;}if(name==='laura:menu'){(sessionStorage.setItem('pcArqReturn','1'),location.href='Juego.html');return;}window.dispatchEvent(new CustomEvent(name));try{parent.postMessage({type:name},'*');}catch(e){}};
 $('go').onclick=()=>nav('laura:continuar','onLauraContinuar');
 $('menu').onclick=()=>nav('laura:menu','onLauraMenu');
 new ResizeObserver(city).observe($('sky').parentElement);city();
