@@ -659,7 +659,7 @@ const PG=(()=>{
  addEventListener('keydown',e=>{if(e.key!=='Escape')return;if($('#fin').classList.contains('open')){closeFinal();e.stopImmediatePropagation();return}if(!$('#spn').hidden){togglePanel(false);e.stopImmediatePropagation()}},true);
  /* menú */
  function goMenu(){save();try{if(parent!==window){parent.postMessage({tipo:'mision-malu-laury:menu'},'*');return}}catch(e){}
-  const u=new URLSearchParams(location.search).get('menu')||'juego.html';
+  const u=new URLSearchParams(location.search).get('menu')||'Juego.html';
   if(location.protocol==='file:'){location.href=u;return}
   fetch(u,{method:'HEAD'}).then(r=>{if(r.ok)location.href=u;else throw 0}).catch(()=>toast('<div>No encuentro la pantalla de selección de personajes («'+esc(u)+'») junto a esta misión.<small>Tu progreso está guardado. Ponla en la misma carpeta o usa ?menu=ruta en la dirección.</small></div>','info',6500))}
  $('#mnu').onclick=goMenu;
