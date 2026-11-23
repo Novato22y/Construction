@@ -24,7 +24,7 @@
 
   /* ---- ESCENA 1: créditos en DOM (tipografía real, no pixelada) ----
      Los cuatro nombres, en el orden indicado. Todos usan la misma clase y el mismo bloque. */
-  var NAMES = ['Laury Melissa Alemán Canchila', 'María Lucía Paternina', 'Isamar Valeria Brito Corona', 'Sharol Gineth Hurtado Villarreal', 'Laura Valentina Arrazola Bermudez'];
+  var NAMES = ['Laury Melissa Alemán Canchila', 'María Lucía Paternina', 'Laura Valentina Arrazola Bermudez', 'Sharol Gineth Hurtado Villarreal', 'Isamar Valeria Brito Corona'];
   var cred = document.createElement('div'); cred.className = 'pci-credits';
   NAMES.forEach(function (n) {
     var b = document.createElement('div'); b.className = 'pci-cr';
