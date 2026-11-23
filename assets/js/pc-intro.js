@@ -24,7 +24,7 @@
 
   /* ---- ESCENA 1: créditos en DOM (tipografía real, no pixelada) ----
      Los cuatro nombres, en el orden indicado. Todos usan la misma clase y el mismo bloque. */
-  var NAMES = ['Laury Melissa Alemán Canchila', 'María Lucía Paternina', 'Isamar Valeria Brito Corona', 'Sharol Gineth Hurtado Villarreal'];
+  var NAMES = ['Laury Melissa Alemán Canchila', 'María Lucía Paternina', 'Isamar Valeria Brito Corona', 'Sharol Gineth Hurtado Villarreal', 'Laura Valentina Arrazola Bermudez'];
   var cred = document.createElement('div'); cred.className = 'pci-credits';
   NAMES.forEach(function (n) {
     var b = document.createElement('div'); b.className = 'pci-cr';
@@ -32,7 +32,7 @@
     b.querySelector('.pci-nm').textContent = n; cred.appendChild(b);
   });
   var col = document.createElement('div'); col.className = 'pci-cr pci-col';
-  col.innerHTML = '<span class="pci-rule"></span><p class="pci-nm pci-sm">Cuatro productoras.<br>Un solo videojuego.</p>'; cred.appendChild(col);
+  col.innerHTML = '<span class="pci-rule"></span><p class="pci-nm pci-sm">Cinco Arquitectas.<br>Un solo videojuego.</p>'; cred.appendChild(col);
   var dotsEl = document.createElement('div'); dotsEl.className = 'pci-dots'; dotsEl.setAttribute('aria-hidden', 'true');
   NAMES.forEach(function () { dotsEl.appendChild(document.createElement('i')); }); cred.appendChild(dotsEl);
   root.appendChild(cred);
