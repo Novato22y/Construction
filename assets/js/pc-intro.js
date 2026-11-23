@@ -28,7 +28,7 @@
   var cred = document.createElement('div'); cred.className = 'pci-credits';
   NAMES.forEach(function (n) {
     var b = document.createElement('div'); b.className = 'pci-cr';
-    b.innerHTML = '<span class="pci-k">PRODUCTORA</span><span class="pci-rule"></span><h2 class="pci-nm"></h2>';
+    b.innerHTML = '<span class="pci-k">ARQUITECTA</span><span class="pci-rule"></span><h2 class="pci-nm"></h2>';
     b.querySelector('.pci-nm').textContent = n; cred.appendChild(b);
   });
   var col = document.createElement('div'); col.className = 'pci-cr pci-col';
@@ -50,8 +50,8 @@
   function mixHex(a, b, t) { var A = parseInt(a.slice(1), 16), B = parseInt(b.slice(1), 16), m = function (s) { return Math.round(((A >> s) & 255) * (1 - t) + ((B >> s) & 255) * t); }; return '#' + [16, 8, 0].map(function (s) { var v = m(s).toString(16); return v.length < 2 ? '0' + v : v; }).join(''); }
 
   /* ---- línea de tiempo (segundos) ---- */
-  var CR0 = .7, SLOT = 2.6;                       /* cada nombre: misma duración (SLOT) */
-  var T_COL = CR0 + 4 * SLOT + .1;                /* frase colectiva */
+  var CR0 = .7, SLOT = 2.8;                       /* cada nombre: misma duración (SLOT) */
+    var T_COL = CR0 + NAMES.length * SLOT + .1;              /* frase colectiva */
   var T2 = T_COL + 2.3;                           /* comienza la escena 2 */
   var U_FOOT = 1.9, U_LEG = 2.9, U_CROSS = 4.6, U_RIV = 5.6, U_CAP = 6.4, U_FLASH = 6.65, U_TITLE = 7.4, U_TRUCK = 2.2, U_END = U_TITLE + 6.2;
   root.style.setProperty('--slot', SLOT + 's');
